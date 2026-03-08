@@ -1,0 +1,40 @@
+services:
+  seo:
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    command: symfony local:server:start --no-tls --port=8000 --allow-all-ip
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./seo:/var/www/html
+      - seo_db_sqlite:/data
+    working_dir: /var/www/html
+  product:
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    command: symfony local:server:start --no-tls --port=8000 --allow-all-ip
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./product:/var/www/html
+      - product_db_sqlite:/data
+    working_dir: /var/www/html
+  front:
+    image: node:lts
+    command: sh -c "npm install && npm run dev -- -o"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front:/app
+      - front_node_modules:/app/node_modules
+    working_dir: /app
+    environment:
+      NUXT_PRODUCT_API_URL: http://product:8000
+      NUXT_SEO_API_URL: http://seo:8000
+volumes:
+  seo_db_sqlite:
+  product_db_sqlite:
+  front_node_modules:
+
