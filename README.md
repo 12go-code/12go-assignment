@@ -122,3 +122,9 @@ Instead, we want you to **think architecturally and long-term**:
 - Identify what would become a bottleneck or pain point as the system grows.
 - Propose how you would evolve the architecture to handle more traffic, more features, and a larger team.
 - Explain your reasoning and trade-offs, even if you only partially implement the ideas in code.
+
+---
+
+## Submission
+
+Please submit your work by opening a **merge request** against this repository. Push your solution to a branch in your fork, then create the MR so we can review your code and discussion of the assignment.
