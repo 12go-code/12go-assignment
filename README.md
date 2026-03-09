@@ -1,5 +1,9 @@
 # 12go-assignment
 
+**Estimated time to complete:** about **3 hours** (Part 1: stations pages — ~2 hours; Part 2: architecture & improvements — ~1 hour).
+
+---
+
 ## Introduction
 
 This repository (**12go-assignment**) is a **task assignment** for Software Engineer candidates at **12Go Asia Pte. Ltd.**  
