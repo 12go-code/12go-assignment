@@ -22,8 +22,7 @@ class AppFixtures extends Fixture
                 ->setEntityId($entityId)
                 ->setLang(Language::EN)
                 ->setTitle($faker->sentence(6))
-                ->setDescription($faker->sentence(12))
-                ->setText($faker->paragraphs(3, true));
+                ->setDescription($faker->sentence(12));
             $manager->persist($meta);
         }
 

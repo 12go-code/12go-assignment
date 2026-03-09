@@ -40,9 +40,6 @@ class Meta
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $text = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -100,17 +97,6 @@ class Meta
     public function setDescription(string $description): static
     {
         $this->description = $description;
-        return $this;
-    }
-
-    public function getText(): ?string
-    {
-        return $this->text;
-    }
-
-    public function setText(string $text): static
-    {
-        $this->text = $text;
         return $this;
     }
 }
