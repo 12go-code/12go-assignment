@@ -16,14 +16,16 @@ class AppFixtures extends Fixture
         $faker = Factory::create();
 
         foreach ([1, 2, 3] as $entityId) {
-            $meta = new Meta();
-            $meta
-                ->setEntityType(MetaEntityType::Operator)
-                ->setEntityId($entityId)
-                ->setLang(Language::EN)
-                ->setTitle($faker->sentence(6))
-                ->setDescription($faker->sentence(12));
-            $manager->persist($meta);
+            foreach (Language::cases() as $lang) {
+                $meta = new Meta();
+                $meta
+                    ->setEntityType(MetaEntityType::Operator)
+                    ->setEntityId($entityId)
+                    ->setLang($lang)
+                    ->setTitle($faker->sentence(6))
+                    ->setDescription($faker->sentence(12));
+                $manager->persist($meta);
+            }
         }
 
         $manager->flush();
