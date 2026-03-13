@@ -131,4 +131,12 @@ Instead, we want you to **think architecturally and long-term**:
 
 ## Submission
 
-Please submit your work by opening a **merge request** against this repository. Push your solution to a branch in your fork, then create the MR so we can review your code and discussion of the assignment.
+Please work in a **local clone** of this repository and commit your changes as you implement your solution.
+
+To prepare your submission, create a git bundle from the `main` branch:
+
+```bash
+git bundle create solution.bundle main
+```
+
+Send the generated `solution.bundle` file back to your reviewer (for example, via email or your application portal).  
